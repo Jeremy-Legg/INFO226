@@ -7,7 +7,116 @@
   display: none !important;
 }
 
-h1,
-p {
-  font-family: sans-serif;
+html {
+  display: block;
+  position: relative;
 }
+
+
+html:after {
+  content: "";
+  background-image: url("https://res.cloudinary.com/cognitives/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,h_800,q_auto,w_1200/ze64rwgsxuwuihhtu3xf");
+  background-repeat: no-repeat;
+  height: 1000px;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#login p {
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  color: white;
+}
+
+#login h2 {
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  color: white;
+}
+
+#header {
+  background-color: #115737;
+  position: static;
+  width: 100%;
+  height: 80px;
+  margin-top: 0px;
+}
+
+#login {
+  position: static;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 10%;
+  padding: 10px;
+  background-color: #115737;
+
+}
+
+.login input {
+  padding: 5px;
+  margin: -50px;
+}
+
+
+#header h1 {
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  color: white;
+  font-size: 45px;
+  text-align: middle;
+  padding: 15px;
+}
+
+h2 {
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  color: white;
+  margin-top: 0px;
+  padding: 10px;
+}
+
+#loginButton{
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+#login #password, #username, p {
+  margin-left: 10px;
+}
+
+#all-courses-container, #my-courses-container, #my-assignments-container,  h2 {
+  background-color: rgba(128, 128, 128, 0.3);
+  color: black;
+}
+
+#single-course, #single-assignment, #all-courses-container,  p {
+  color: black;
+  border-bottom: 2px solid #115737;
+}
+
+
+input[type="checkbox" i] {
+  margin-left: -15px;
+  opacity: 0;
+}
+.checkbox {
+  position: static;
+  float: left;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+
+.check input:checked ~ .checkbox {
+  background-color: #115737;
+  display: block;
+}
+
+
+
