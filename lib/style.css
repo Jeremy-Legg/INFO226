@@ -32,11 +32,16 @@ html:after {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
 
+
 }
 
 #login h2 {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
+  background-color: #115737;
+  border-radius: 10px;
+
+
 }
 
 #header {
@@ -49,25 +54,43 @@ html:after {
 }
 
 #login {
-  position: static;
-  margin-left: 35%;
-  margin-right: 35%;
-  margin-top: 10%;
-  padding: 10px;
-  background-color: #115737;
+  position: absolute;
+  top: 150%;
+  left: 45%;
+  font-weight: bold;
+  /*margin-left: 35%;*/
+  /*margin-right: 35%;*/
+  /*margin-top: 10%;*/
+  padding: 30px;
+  /*background-color: #115737;*/
+  background: rgba(0, 0, 0, 0.5);
   font-size: 18px;
-  text-align: center;
+  /*text-align: center;*/
   width: 500px;
   border-radius: 10px;
   overflow: hidden;
+  box-sizing: border-box;
+  height: 420px;
+  width: 320px;
+
 
 }
 
 .login input {
   padding: 5px;
   margin: -50px;
+
 }
 
+.login ,input[type="text"], input[type="password"]
+{
+  width: 80%;
+  border: none;
+  outline: none;
+  height: 25px;
+  border-radius: 10px;
+
+}
 
 #header h1 {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
@@ -75,6 +98,7 @@ html:after {
   font-size: 45px;
   text-align: middle;
   padding: 15px;
+
 }
 
 h2 {
@@ -86,12 +110,25 @@ h2 {
 
 #loginButton{
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
-  font-size: 16px;
-  margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background-color: white;
-  padding: 10px;
+  /*font-size: 16px;*/
+  /*margin-left: 10px;*/
+  /*margin-top: 20px;*/
+  /*margin-bottom: 10px;*/
+  /*background-color: white;*/
+  /*padding: 10px;*/
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 130px;
+  color: #fff;
+  background: #115737;
+  font-size: 18px;
+  border-radius: 10px;
+}
+#loginButton:hover {
+  cursor: pointer;
+  background: white;
+  color: #000;
 }
 
 
@@ -106,7 +143,7 @@ h2 {
 
 #single-course, #single-assignment, #all-courses-container,  p {
   color: black;
-  border-bottom: 2px solid #115737;
+  /*border-bottom: 2px solid #115737;*/
 }
 
 
