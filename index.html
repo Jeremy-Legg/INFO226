@@ -6,6 +6,8 @@
 
   <script src="lib/script.js"></script>
   <script src="lib/login.js"></script>
+<!--  <script src="lib/lecturerpage.js"></script>-->
+
 </head>
 
 <body>
@@ -15,12 +17,12 @@
 </div>
 
 
-<!--
+
     <div id="login" ng-controller="LoginController">
       <form>
         <h2>Login Information</h2>
         <p>Username</p>
-        <input id="username" type="text" title="username" ng-model="username" />
+        <input id="username" type="text" title="username" ng-model="username" value placeholder="Username" required == $0/>
         <br />
         <br />
 
@@ -30,9 +32,10 @@
           type="password"
           title="password"
           ng-model="password"
+          placeholder="Password" ==  $0
         />
-        <br />
-        <br />
+        <br/>
+        <br/>
         <button
           type="button"
           id="loginButton"
@@ -41,9 +44,11 @@
         >
           Login
         </button>
+
+
       </form>
     </div>
-    -->
+
 <!--
 <div id="my-assignments-container">
   <h2>My assignments</h2>
@@ -75,7 +80,6 @@
   </div>
 </div>
 -->
-
 
 <!--
 <div id="my-courses-container">
@@ -165,5 +169,70 @@
 </body>
 
 -->
+<!--Morgan working on lecturer page-->
+<!--<div ng-app="myapp" ng-controller="myctrl">-->
+
+
+
+
+
+<!--  <table border="2" bordercolor="black">-->
+
+
+<!--    <tr style="color:black">-->
+
+
+<!--      <th style="width:150px">Course ID</th>-->
+
+
+
+<!--      <th style="width:150px">Course Name</th>-->
+
+
+
+<!--      <th style="width:150px">Information</th>-->
+
+
+
+<!--      <th>Actions</th>-->
+
+
+<!--    </tr>-->
+
+
+
+<!--    <tr style="color:black" ng-repeat="student in students">-->
+
+
+<!--      <td>{{ course.id }}</td>-->
+
+
+
+<!--      <td>{{ course.name }}</td>-->
+
+
+
+<!--      <td>{{ course.information }}</td>-->
+
+
+
+<!--      <td>-->
+<!--        <a href="#" ng-click="edit(course.id)">Add</a> |-->
+
+<!--        <a href="#" ng-click="edit(course.id)">Edit</a> |-->
+
+<!--        <a href="#" ng-click="delete(course.id)">Delete</a>-->
+
+<!--      </td>-->
+
+
+<!--    </tr>-->
+
+
+<!--  </table>-->
+
+
+<!--</div>-->
+
 </body>
 </html>

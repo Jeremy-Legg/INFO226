@@ -17,6 +17,7 @@ html:after {
   content: "";
   background-image: url("https://res.cloudinary.com/cognitives/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,h_800,q_auto,w_1200/ze64rwgsxuwuihhtu3xf");
   background-repeat: no-repeat;
+  background-size: cover;
   height: 1000px;
   opacity: 0.2;
   top: 0;
@@ -30,6 +31,7 @@ html:after {
 #login p {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
+
 }
 
 #login h2 {
@@ -43,6 +45,7 @@ html:after {
   width: 100%;
   height: 80px;
   margin-top: 0px;
+  border-radius: 10px;
 }
 
 #login {
@@ -52,6 +55,11 @@ html:after {
   margin-top: 10%;
   padding: 10px;
   background-color: #115737;
+  font-size: 18px;
+  text-align: center;
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
 
 }
 
@@ -85,6 +93,7 @@ h2 {
   background-color: white;
   padding: 10px;
 }
+
 
 #login #password, #username, p {
   margin-left: 10px;
