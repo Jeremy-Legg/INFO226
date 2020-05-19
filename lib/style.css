@@ -31,6 +31,7 @@ html:after {
 #login p {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
+  margin-top: 30px;
 
 
 }
@@ -39,7 +40,7 @@ html:after {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
   background-color: #115737;
-  border-radius: 10px;
+  border-radius: 6px;
 
 
 }
@@ -50,7 +51,28 @@ html:after {
   width: 100%;
   height: 80px;
   margin-top: 0px;
-  border-radius: 10px;
+  border-radius: 6px;
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+}
+
+#header h1 {
+  color: white;
+  font-size: 45px;
+  padding:10px;
+  margin-top: 5px;
+  display: inline-block;
+  position: static;
+}
+
+#header button {
+  float: right;
+  padding:10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #115737;
 }
 
 #login {
@@ -67,7 +89,7 @@ html:after {
   font-size: 18px;
   /*text-align: center;*/
   width: 500px;
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
   box-sizing: border-box;
   height: 420px;
@@ -82,24 +104,16 @@ html:after {
 
 }
 
-.login ,input[type="text"], input[type="password"]
-{
+.login ,input[type="text"], input[type="password"] {
   width: 80%;
   border: none;
   outline: none;
   height: 25px;
-  border-radius: 10px;
+  border-radius: 6px;
 
 }
 
-#header h1 {
-  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
-  color: white;
-  font-size: 45px;
-  text-align: middle;
-  padding: 15px;
 
-}
 
 h2 {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
@@ -111,7 +125,7 @@ h2 {
 #loginButton{
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   /*font-size: 16px;*/
-  /*margin-left: 10px;*/
+  margin-left: 10px;
   /*margin-top: 20px;*/
   /*margin-bottom: 10px;*/
   /*background-color: white;*/
@@ -123,12 +137,13 @@ h2 {
   color: #fff;
   background: #115737;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 6px;
+  margin-top: 30px;
 }
 #loginButton:hover {
   cursor: pointer;
   background: white;
-  color: #000;
+  color: #115737;
 }
 
 
@@ -136,9 +151,10 @@ h2 {
   margin-left: 10px;
 }
 
-#all-courses-container, #my-courses-container, #my-assignments-container,  h2 {
-  background-color: rgba(128, 128, 128, 0.3);
+#all-courses-container, #my-courses-container, #my-assignments-container, lecturerPage,  h2 {
+  background-color: rgba(128, 128, 128, 0.2);
   color: black;
+  border-radius: 6px;
 }
 
 #single-course, #single-assignment, #all-courses-container,  p {
@@ -162,6 +178,22 @@ input[type="checkbox" i] {
 .check input:checked ~ .checkbox {
   background-color: #115737;
   display: block;
+}
+
+table {
+  margin-top: 10px;
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+}
+
+th {
+  background-color: #115737;
+  padding: 15px;
+  color: white;
+  border-radius: 6px;
+}
+
+td {
+  padding: 5px;
 }
 
 
