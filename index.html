@@ -6,7 +6,7 @@
 
   <script src="lib/script.js"></script>
   <script src="lib/login.js"></script>
-<!--  <script src="lib/lecturerpage.js"></script>-->
+  <!--  <script src="lib/lecturerpage.js"></script>-->
 
 </head>
 
@@ -21,37 +21,37 @@
 
 
 
-    <div id="login" ng-controller="LoginController" ng-hide="showLogin">
-      <form>
-        <h2>Login Information</h2>
-        <p>Username</p>
-        <input id="username" type="text" title="username" ng-model="username" value placeholder="Username" required == $0/>
-        <br />
-        <br />
+<div id="login" ng-controller="LoginController" ng-hide="showLogin">
+  <form>
+    <h2>Login Information</h2>
+    <p>Username</p>
+    <input id="username" type="text" title="username" ng-model="username" value placeholder="Username" required == $0/>
+    <br />
+    <br />
 
-        <p>Password</p>
-        <input
-          id="password"
-          type="password"
-          title="password"
-          ng-model="password"
-          placeholder="Password" ==  $0
-        />
-        <br/>
-        <br/>
-        <button
-          type="button"
-          id="loginButton"
-          ng-click="login()"
-          style="float: center;"
+    <p>Password</p>
+    <input
+            id="password"
+            type="password"
+            title="password"
+            ng-model="password"
+            placeholder="Password" ==  $0
+    />
+    <br/>
+    <br/>
+    <button
+            type="button"
+            id="loginButton"
+            ng-click="login()"
+            style="float: center;"
 
-        >
-          Login
-        </button>
+    >
+      Login
+    </button>
 
 
-      </form>
-    </div>
+  </form>
+</div>
 
 
 <!--
