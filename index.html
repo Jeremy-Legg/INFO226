@@ -4,13 +4,14 @@
 <head>
   <link rel="stylesheet" type="text/css" href="lib/style.css" />
 
-  <script src="lib/script.js"></script>
+<!--  <script src="lib/script.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="lib/login.js"></script>
   <!--  <script src="lib/lecturerpage.js"></script>-->
 
 </head>
 
-<body>
+<body ng-app="Info226">
 <div id="header">
   <h1>INFO 226</h1>
   <button onclick="logOut()"> Log Out </button>
@@ -35,25 +36,18 @@
             type="password"
             title="password"
             ng-model="password"
-            placeholder="Password" ==  $0
-    />
+            placeholder="Password"/>
     <br/>
     <br/>
     <button
             type="button"
             id="loginButton"
-            ng-click="login()"
-            style="float: center;"
-
-    >
-      Login
+            ng-click="login()">
+            Login
     </button>
-
-
   </form>
 </div>
-
-
+-->
 <!--
 <div id="my-assignments-container" ng-hide="showAssignments">
   <h2>My assignments</h2>
@@ -104,8 +98,8 @@
 </div>
 -->
 
-
 <!--
+
 <div id="all-courses-container" ng-hide="showAllCourses">
   <h2>All courses</h2>
   <div id="courses">
