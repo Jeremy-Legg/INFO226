@@ -2,183 +2,158 @@
 
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="lib/style.css" />
-    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.12/angular.js" data-semver="1.4.9"></script>
+    <link rel="stylesheet" type="text/css" href="lib/style.css" />
 
-  <script src="lib/script.js"></script>
-  <script src="lib/login.js"></script>
-    <script src="lib/lecturerpage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="lib/app.js"></script>
+
 
 </head>
 
-<body>
+<body ng-app="Info226" ng-controller="appController" >
 <div id="header">
-  <h1>INFO 226</h1>
-  <button onclick="logOut()"> Log Out </button>
-  <button ng-hide="isStudent" onclick="showAllCourses()"> All Courses </button>
-  <button ng-hide="isStudent" onclick="showMyCourses()"> My Courses </button>
-  <button ng-hide="isStudent" onclick="showAssignments()"> Assignments </button>
+    <h1>INFO 226</h1>
+    <button ng-hide="isLoggedIn" ng-click="logOutView()"> Log Out </button>
+    <button ng-hide="isStudent" ng-click="showAllCoursesView()"> All Courses </button>
+    <button ng-hide="isStudent" ng-click="showMyCoursesView()"> My Courses </button>
+    <button ng-hide="isStudent" ng-click="showAssignmentsView()"> Assignments </button>
 </div>
 
 
 
-<!--<div id="login" ng-controller="LoginController" ng-hide="showLogin">-->
-<!--  <form>-->
-<!--    <h2>Login Information</h2>-->
-<!--    <p>Username</p>-->
-<!--    <input id="username" type="text" title="username" ng-model="username" value placeholder="Username" required == $0/>-->
-<!--    <br />-->
-<!--    <br />-->
+<div id="login" ng-hide="showLogin">
+    <form>
+        <h2>Login Information</h2>
+        <p>Username</p>
+        <input id="username" type="text" title="username" ng-model="username" value placeholder="Username" required == $0/>
+        <br />
+        <br />
 
-<!--    <p>Password</p>-->
-<!--    <input-->
-<!--            id="password"-->
-<!--            type="password"-->
-<!--            title="password"-->
-<!--            ng-model="password"-->
-<!--            placeholder="Password" ==  $0-->
-<!--    />-->
-<!--    <br/>-->
-<!--    <br/>-->
-<!--    <button-->
-<!--            type="button"-->
-<!--            id="loginButton"-->
-<!--            ng-click="login()"-->
-<!--            style="float: center;"-->
-
-<!--    >-->
-<!--      Login-->
-<!--    </button>-->
+        <p>Password</p>
+        <input
+                id="password"
+                type="password"
+                title="password"
+                ng-model="password"
+                placeholder="Password"/>
+        <br/>
+        <br/>
+        <button
+                type="button"
+                id="loginButton"
+                ng-click="login()">
+            Login
+        </button>
+    </form>
+</div>
 
 
-<!--  </form>-->
-<!--</div>-->
-
-
-<!--
 <div id="my-assignments-container" ng-hide="showAssignments">
-  <h2>My assignments</h2>
-  <table id="studentAssignmentTable">
-    <tr style="color:black"></tr>
-    <th style="width:150px">Course ID</th>
-    <th style="width:150px">Course Name</th>
-    <th style="width:150px">Information</th>
-    <th style="width:150px">Completed</th>
-    </tr>
+    <h2>My assignments</h2>
+    <table id="studentAssignmentTable">
+        <tr style="color:black"></tr>
+        <th style="width:150px">Course ID</th>
+        <th style="width:150px">Course Name</th>
+        <th style="width:150px">Information</th>
+        <th style="width:150px">Completed</th>
+        </tr>
 
-    <tr style="color:black" ng-repeat="assignment in assignments">
-      <td>{{ assignment.id }}</td>
-      <td>{{ assignment.name }}</td>
-      <td>{{ assignment.details }}</td>
+        <tr style="color:black" ng-repeat="assignment in assignments">
+            <td>{{ assignment.id }}</td>
+            <td>{{ assignment.name }}</td>
+            <td>{{ assignment.details }}</td>
 
-      <td>
-        <label onclick="completed()" class="check" style="float: right;">
-          <input type="checkbox" />
-          <span class="checkbox"></span>
-        </label>
-      </td>
-    </tr>
-  </table>
-</div>
--->
-
-<!--
-<div id="my-courses-container" ng-hide="showMyCourses">
-  <h2>My courses</h2>
-  <table id="studentMyTable">
-    <tr style="color:black"></tr>
-    <th style="width:150px">Course ID</th>
-    <th style="width:150px">Course Name</th>
-    <th style="width:150px">Information</th>
-    <th style="width:150px">Actions</th>
-    </tr>
-
-    <tr style="color:black" ng-repeat="course in courses">
-      <td>{{ course.id }}</td>
-      <td>{{ course.name }}</td>
-      <td>{{ course.information }}</td>
-      <td>
-        <a href="#" ng-click="remove(course.id)">Remove</a>
-      </td>
-    </tr>
-  </table>
-</div>
--->
-
-
-<!--
-<div id="all-courses-container" ng-hide="showAllCourses">
-  <h2>All courses</h2>
-  <div id="courses">
-    <table id="studentAllTable">
-      <tr style="color:black"></tr>
-      <th style="width:150px">Course ID</th>
-      <th style="width:150px">Course Name</th>
-      <th style="width:150px">Information</th>
-      <th>Enrolled</th>
-      </tr>
-
-      <tr style="color:black" ng-repeat="course in courses">
-        <td>{{ course.id }}</td>
-        <td>{{ course.name }}</td>
-        <td>{{ course.information }}</td>
-
-        <td>
-          <label class="check" style="float: right;">
-            <input type="checkbox" />
-            <span class="checkbox"></span>
-          </label>
-        </td>
-      </tr>
+            <td>
+                <label onclick="completed()" class="check" style="float: right;">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                </label>
+            </td>
+        </tr>
     </table>
-  </div>
 </div>
--->
+
+<div id="my-courses-container" ng-hide="showMyCourses">
+    <h2>My courses</h2>
+    <table id="studentMyTable">
+        <tr style="color:black"></tr>
+        <th style="width:150px">Course ID</th>
+        <th style="width:150px">Course Name</th>
+        <th style="width:150px">Information</th>
+        <th style="width:150px">Actions</th>
+        </tr>
+
+        <tr style="color:black" ng-repeat="course in courses">
+            <td>{{ course.id }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.information }}</td>
+            <td>
+                <a href="#" ng-click="remove(course.id)">Remove</a>
+            </td>
+        </tr>
+    </table>
+</div>
 
 
-<div id="lecturerPage"  ng-app="lectureApp" ng-hide="showLecturer" ng-controller="lectureControl" >
-  <h2> Administration </h2>
-<table id="lecturerTable">
-    <tr style="color:black"></tr>
-      <th style="width:150px">Course ID</th>
-      <th style="width:150px">Course Name</th>
-      <th style="width:150px">Overview</th>
-      <th style="width:150px">Year</th>
-      <th style="width:150px">Trimester</th>
-      <th style="width:150px">Actions</th>
-    </tr>
+<div id="all-courses-container" ng-hide="showAllCourses">
+    <h2>All courses</h2>
+    <div id="courses">
+        <table id="studentAllTable">
+            <tr style="color:black"></tr>
+            <th style="width:150px">Course ID</th>
+            <th style="width:150px">Course Name</th>
+            <th style="width:150px">Information</th>
+            <th style="width:150px">Enrolled</th>
+            </tr>
+
+            <tr style="color:black" ng-repeat="course in courses">
+                <td>{{ course.id }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.information }}</td>
+
+                <td>
+                    <label class="check" style="float: right;">
+                        <input type="checkbox" />
+                        <span class="checkbox"></span>
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="lecturerPage"  ng-hide="showLecturer">
+    <h2> Administration </h2>
+    <table id="lecturerTable">
+        <tr style="color:black"></tr>
+        <th style="width:150px">Course ID</th>
+        <th style="width:150px">Course Name</th>
+        <th style="width:150px">Overview</th>
+        <th style="width:150px">Year</th>
+        <th style="width:150px">Trimester</th>
+        <th style="width:150px">Actions</th>
+        </tr>
 
 
 
-    <button ng-click="getCourseID()">get course list</button>
-    <p ng-bind="courselist"></p>
+        <button ng-click="getCourseID()">get course list</button>
+        <p ng-bind="courselist"></p>
 
-    <button ng-click="addCourse()"> Add new course </button>
-    <!-- courses lists -->
-     <tr style="color:black"  ng-repeat="course in lectureCourses">
-     <td>{{course.ID}}</td>
-     <td>{{course.Name}}</td>
-     <td>{{course.Overview}}</td>
-     <td>{{course.Year}}</td>
-     <td>{{course.Trimester}}</td>
-      <td>
-        <a href="#" ng-click="edit(course.id)">Edit</a> |
-        <a href="#" ng-click="deleteCourse(course)">Delete</a>
-     </td>
-   </tr>
- </table>
-
-    <!-- getting course list -->
-
-
-
-<!--    <ul ng-repeat="courses in lectureCourses">-->
-<!--        <li>{{courses.ID}}</li>-->
-
-<!--    </ul>-->
-
-<!--    &lt;!&ndash; adding new courses &ndash;&gt;-->
-
+        <button ng-click="addCourse()"> Add new course </button>
+        <!-- courses lists -->
+        <tr style="color:black"  ng-repeat="course in lectureCourses">
+            <td>{{course.ID}}</td>
+            <td>{{course.Name}}</td>
+            <td>{{course.Overview}}</td>
+            <td>{{course.Year}}</td>
+            <td>{{course.Trimester}}</td>
+            <td>
+                <a href="#" ng-click="edit(course.id)">Edit</a> |
+                <a href="#" ng-click="deleteCourse(course)">Delete</a>
+            </td>
+        </tr>
+    </table>
 
 
     <form ng-show="addForm">
@@ -201,8 +176,6 @@
         <br>
         <button ng-click="addCourse()"> ADD</button>
     </form>
-
-
 </div>
 
 </body>
