@@ -17,6 +17,9 @@
   <button ng-hide="isStudent" ng-click="showAllCoursesView()"> All Courses </button>
   <button ng-hide="isStudent" ng-click="showMyCoursesView()"> My Courses </button>
   <button ng-hide="isStudent" ng-click="showAssignmentsView()"> Assignments </button>
+  <button ng-hide="isLecture" ng-click="getLectureAssignmentsID()">Lecturer Assignments</button>
+  <button ng-hide="isLecture" ng-click="getCourseID()">Lecturer Courses</button>
+
 </div>
 
 
@@ -125,6 +128,12 @@
 
 <div id="lecturerPage"  ng-hide="showLecturer">
   <h2> Administration </h2>
+
+<!--  Buttons to show the add forms-->
+  
+  <button>Add Course</button>
+  <button>Add Assignment</button>
+
   <table id="lecturerTable">
     <tr style="color:black"></tr>
     <th style="width:150px">Course ID</th>
@@ -132,15 +141,17 @@
     <th style="width:150px">Overview</th>
     <th style="width:150px">Year</th>
     <th style="width:150px">Trimester</th>
+    <th style="width:150px">Lecture Times</th>
+    <th style="width:150px">Lecturer ID</th>
     <th style="width:150px">Actions</th>
     </tr>
 
 
 
-    <button ng-click="getCourseID()">get course list</button>
-    <p ng-bind="courselist"></p>
 
-    <button ng-click="addCourse()"> Add new course </button>
+
+
+
     <!-- courses lists -->
     <tr style="color:black"  ng-repeat="course in lectureCourses">
       <td>{{course.ID}}</td>
@@ -148,35 +159,244 @@
       <td>{{course.Overview}}</td>
       <td>{{course.Year}}</td>
       <td>{{course.Trimester}}</td>
+      <td>{{course.LectureTimes}}</td>
+      <td>{{course.LecturerID}}</td>
       <td>
-        <a href="#" ng-click="edit(course.id)">Edit</a> |
+        <a href="#" ng-click="editCourse(course)">Edit</a> |
         <a href="#" ng-click="deleteCourse(course)">Delete</a>
       </td>
     </tr>
   </table>
 
 
-  <form ng-show="addForm">
-    <h3>Create New Course:</h3>
+  <form>
+    <h3>Add New Course:</h3>
+    <div class="formView">
     <label>Course ID:</label>
     <input type="text" ng-model="cID" placeholder="Course ID">
+    </div>
     <br>
+
+    <div class="formView">
     <label>Course Name:</label>
     <input type="text" ng-model="cName" placeholder="Course Name">
+    </div>
+
     <br>
+
+    <div class="formView">
     <label>Overview:</label>
-    <input type="text" ng-model="cInformation" placeholder="Information">
+    <input type="text" ng-model="cOverview" placeholder="Information">
+    </div>
+
     <br>
+
+    <div class="formView">
     <label>Year:</label>
     <input type="text" ng-model="cYear" placeholder="Year">
+    </div>
+
     <br>
+
+    <div class="formView">
     <label>Trimester:</label>
     <input type="text" ng-model="cTrimester" placeholder="Trimester">
+    </div>
 
     <br>
-    <button ng-click="addCourse()"> ADD</button>
-  </form>
-</div>
 
+    <div class="formView">
+    <label>LectureTimes:</label>
+    <input type="text" ng-model="cLectureTimes" placeholder="Times">
+    </div>
+
+    <br>
+    <div class="formView">
+    <label>LectureID:</label>
+    <input type="text" ng-model="cLecturerID" placeholder="Lecture ID">
+    </div>
+
+    <br>
+    <br>
+    <button ng-click="addCourse()"> Submit Course</button>
+  </form>
+
+  <h3> Edit Course </h3>
+  <form>
+    <div class="formView">
+      <label>Course ID </label>
+
+      <input type="text" ng-model="editCourseID" readonly></input>
+    </div>
+
+      <br>
+    <div class="formView">
+
+    <label>Course Name</label>
+      <input type="text" ng-model="editCourseName"></input>
+    </div>
+
+      <br>
+
+    <div class="formView">
+
+      <label>Course Overview</label>
+      <input type="text" ng-model="editCourseOverview"></input>
+    </div>
+
+      <br>
+
+    <div class="formView">
+
+    <label>Year</label>
+      <input type="text" ng-model="editYear"></input>
+    </div>
+
+      <br>
+
+    <div class="formView">
+
+    <label>Trimester</label>
+      <input type="text" ng-model="editTrimester"></input>
+    </div>
+
+      <br>
+    <div class="formView">
+
+    <label>Lecture Times</label>
+      <input type="text" ng-model="editLectureTimes"></input>
+    </div>
+
+      <br>
+
+    <div class="formView">
+
+    <label>Lecturer ID</label>
+      <input type="text" ng-model="editLecturerID"></input>
+    </div>
+    <br>
+    <br>
+    <button ng-click="editPostCourse()"> Save Changes </button>
+  </form>
+
+
+
+
+
+  <table>
+    <tr style="color:black"></tr>
+    <th style="width:150px">Assignment ID</th>
+    <th style="width:150px">Assignment Name</th>
+    <th style="width:150px">Overview</th>
+    <th style="width:150px">Course ID</th>
+    <th style="width:150px">Due Date</th>
+    <th style="width:150px">Actions</th>
+    </tr>
+
+
+
+
+
+
+    <!-- Lecture Assignments -->
+    <tr style="color:black"  ng-repeat="assignment in lectureAssignments">
+      <td>{{assignment.ID}}</td>
+      <td>{{assignment.Name}}</td>
+      <td>{{assignment.Overview}}</td>
+      <td>{{assignment.CourseID}}</td>
+      <td>{{assignment.DueDate}}</td>
+      <td>
+        <a href="#" ng-click="editAssignment(assignment)">Edit</a> |
+        <a href="#" ng-click="deleteAssignment(assignment)">Delete</a>
+      </td>
+    </tr>
+  </table>
+
+  <form>
+
+    <h3>Add New Assignment:</h3>
+    <div class="formView">
+      <label>Assignment ID:</label>
+      <input type="text" ng-model="aID" placeholder="Course ID">
+    </div>
+    <br>
+
+    <div class="formView">
+      <label>Assignment Name:</label>
+      <input type="text" ng-model="aName" placeholder="Assignment Name">
+    </div>
+
+    <br>
+
+    <div class="formView">
+      <label>Overview:</label>
+      <input type="text" ng-model="aOverview" placeholder="Overview">
+    </div>
+
+    <br>
+
+    <div class="formView">
+      <label>Course ID:</label>
+      <input type="text" ng-model="aCourseID" placeholder="Course ID">
+    </div>
+
+    <br>
+
+    <div class="formView">
+      <label>Due Date:</label>
+      <input type="text" ng-model="aDueDate" placeholder="Due Date">
+    </div>
+
+    <br>
+    <br>
+    <button ng-click="addAssignment()"> Submit Course</button>
+  </form>
+
+
+  <h3> Edit Assignment </h3>
+  <form>
+    <div class="formView">
+      <label>Assignment ID </label>
+
+      <input type="text" ng-model="editAssignmentID" readonly></input>
+    </div>
+
+    <br>
+    <div class="formView">
+
+      <label>Assignment Name</label>
+      <input type="text" ng-model="editAssignmentName"></input>
+    </div>
+
+    <br>
+
+    <div class="formView">
+
+      <label>Assignment Overview</label>
+      <input type="text" ng-model="editAssignmentOverview"></input>
+    </div>
+
+    <br>
+
+    <div class="formView">
+
+      <label>Course ID</label>
+      <input type="text" ng-model="editAssignmentCourseID"></input>
+    </div>
+
+    <br>
+
+    <div class="formView">
+
+      <label>Due Date</label>
+      <input type="text" ng-model="editDueDate"></input>
+    </div>
+
+
+    <br>
+    <br>
+    <button ng-click="editPostAssignment()"> Save Changes </button>
+
+</div>
 </body>
 </html>

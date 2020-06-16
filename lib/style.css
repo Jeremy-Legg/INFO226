@@ -64,7 +64,7 @@ html:after {
   position: static;
 }
 
-#header button {
+#header button{
   float: right;
   padding:10px;
   margin-top: 20px;
@@ -151,7 +151,7 @@ h2 {
   margin-left: 10px;
 }
 
-#all-courses-container, #my-courses-container, #my-assignments-container, lecturerPage,  h2 {
+#all-courses-container, #my-courses-container, #my-assignments-container, #lecturerPage,  h2 {
   background-color: rgba(128, 128, 128, 0.2);
   color: black;
   border-radius: 6px;
@@ -196,5 +196,14 @@ td {
   padding: 5px;
 }
 
+.formView{
+  width: 400px;
+}
 
+.formView input{
+  width: 400px;
+  height: 25px;
+
+
+}
 
