@@ -198,12 +198,20 @@ td {
 
 .formView{
   width: 400px;
+  padding-left: 5px;
 }
 
 .formView input{
-  width: 400px;
+  width: 600px;
   height: 25px;
 
 
 }
 
+#adminButtons Button{
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #115737;
+  padding: 5px;
+}

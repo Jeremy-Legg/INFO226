@@ -3,7 +3,6 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="lib/style.css" />
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="lib/app.js"></script>
 
@@ -17,8 +16,8 @@
   <button ng-hide="isStudent" ng-click="showAllCoursesView()"> All Courses </button>
   <button ng-hide="isStudent" ng-click="showMyCoursesView()"> My Courses </button>
   <button ng-hide="isStudent" ng-click="showAssignmentsView()"> Assignments </button>
-  <button ng-hide="isLecture" ng-click="getLectureAssignmentsID()">Lecturer Assignments</button>
-  <button ng-hide="isLecture" ng-click="getCourseID()">Lecturer Courses</button>
+  <button ng-hide="showLecturer" ng-click="getLectureAssignmentsID()">Lecturer Assignments</button>
+  <button ng-hide="showLecturer" ng-click="getCourseID()">Lecturer Courses</button>
 
 </div>
 
@@ -130,10 +129,10 @@
   <h2> Administration </h2>
 
 <!--  Buttons to show the add forms-->
-  
+  <div id="adminButtons">
   <button>Add Course</button>
   <button>Add Assignment</button>
-
+  </div>
   <table id="lecturerTable">
     <tr style="color:black"></tr>
     <th style="width:150px">Course ID</th>
