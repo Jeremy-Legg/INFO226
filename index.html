@@ -129,10 +129,16 @@
   <h2> Administration </h2>
 
 <!--  Buttons to show the add forms-->
-  <div id="adminButtons">
+  <div id="adminAddCourse" ng-click="lectureAddNew()">
+
   <button>Add Course</button>
-  <button>Add Assignment</button>
   </div>
+
+  <div id="adminAddAssignment" ng-click="lectureNewAssignment()">
+  <button>Add Assignment</button>
+</div>
+
+  <div ng-hide="lectureCourseDire">
   <table id="lecturerTable">
     <tr style="color:black"></tr>
     <th style="width:150px">Course ID</th>
@@ -166,8 +172,9 @@
       </td>
     </tr>
   </table>
+  </div>
 
-
+<div ng-hide="lectureAddCourse">
   <form>
     <h3>Add New Course:</h3>
     <div class="formView">
@@ -219,7 +226,9 @@
     <br>
     <button ng-click="addCourse()"> Submit Course</button>
   </form>
+</div>
 
+<div ng-hide="lectureEditCourse">
   <h3> Edit Course </h3>
   <form>
     <div class="formView">
@@ -279,9 +288,9 @@
   </form>
 
 
+</div>
 
-
-
+  <div ng-hide="lectureAssignmentDire">
   <table>
     <tr style="color:black"></tr>
     <th style="width:150px">Assignment ID</th>
@@ -298,6 +307,7 @@
 
 
     <!-- Lecture Assignments -->
+
     <tr style="color:black"  ng-repeat="assignment in lectureAssignments">
       <td>{{assignment.ID}}</td>
       <td>{{assignment.Name}}</td>
@@ -311,6 +321,8 @@
     </tr>
   </table>
 
+</div>
+  <div ng-hide="lectureAddAssignment">
   <form>
 
     <h3>Add New Assignment:</h3>
@@ -350,8 +362,9 @@
     <br>
     <button ng-click="addAssignment()"> Submit Course</button>
   </form>
+  </div>
 
-
+  <div ng-hide="lectureEditAssignment">
   <h3> Edit Assignment </h3>
   <form>
     <div class="formView">
@@ -395,7 +408,8 @@
     <br>
     <br>
     <button ng-click="editPostAssignment()"> Save Changes </button>
-
+  </form>
+</div>
 </div>
 </body>
 </html>

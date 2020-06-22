@@ -208,7 +208,7 @@ td {
 
 }
 
-#adminButtons Button{
+#adminAddAssignment, #adminAddCourse,  Button{
   border-radius: 6px;
   font-size: 15px;
   font-weight: bold;
