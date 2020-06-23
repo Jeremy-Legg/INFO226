@@ -12,7 +12,6 @@ html {
   position: relative;
 }
 
-
 html:after {
   content: "";
   background-image: url("https://res.cloudinary.com/cognitives/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,h_800,q_auto,w_1200/ze64rwgsxuwuihhtu3xf");
@@ -32,8 +31,6 @@ html:after {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
   color: white;
   margin-top: 30px;
-
-
 }
 
 #login h2 {
@@ -41,8 +38,6 @@ html:after {
   color: white;
   background-color: #115737;
   border-radius: 6px;
-
-
 }
 
 #header {
@@ -64,7 +59,7 @@ html:after {
   position: static;
 }
 
-#header button {
+#header button{
   float: right;
   padding:10px;
   margin-top: 20px;
@@ -80,22 +75,26 @@ html:after {
   top: 150%;
   left: 45%;
   font-weight: bold;
-  /*margin-left: 35%;*/
-  /*margin-right: 35%;*/
-  /*margin-top: 10%;*/
   padding: 30px;
-  /*background-color: #115737;*/
   background: rgba(0, 0, 0, 0.5);
   font-size: 18px;
-  /*text-align: center;*/
   width: 500px;
   border-radius: 6px;
   overflow: hidden;
   box-sizing: border-box;
   height: 420px;
   width: 320px;
+}
 
-
+#incorrectLogin p {
+  position: absolute;
+  top: 550%;
+  left: 45%;
+  font-weight: bold;
+  padding: 30px;
+  font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
+  color: black;
+  font-size: 12px;
 }
 
 .login input {
@@ -110,10 +109,7 @@ html:after {
   outline: none;
   height: 25px;
   border-radius: 6px;
-
 }
-
-
 
 h2 {
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
@@ -124,12 +120,7 @@ h2 {
 
 #loginButton{
   font-family: "Segoe WP","Nimbus Sans L",Arial,"Helvetica Neue","Helvetica",sans-serif;
-  /*font-size: 16px;*/
   margin-left: 10px;
-  /*margin-top: 20px;*/
-  /*margin-bottom: 10px;*/
-  /*background-color: white;*/
-  /*padding: 10px;*/
   border: none;
   outline: none;
   height: 40px;
@@ -146,12 +137,11 @@ h2 {
   color: #115737;
 }
 
-
 #login #password, #username, p {
   margin-left: 10px;
 }
 
-#all-courses-container, #my-courses-container, #my-assignments-container, lecturerPage,  h2 {
+#all-courses-container, #my-courses-container, #my-assignments-container, #lecturerPage,  h2 {
   background-color: rgba(128, 128, 128, 0.2);
   color: black;
   border-radius: 6px;
@@ -159,14 +149,13 @@ h2 {
 
 #single-course, #single-assignment, #all-courses-container,  p {
   color: black;
-  /*border-bottom: 2px solid #115737;*/
 }
-
 
 input[type="checkbox" i] {
   margin-left: -15px;
   opacity: 0;
 }
+
 .checkbox {
   position: static;
   float: left;
@@ -196,5 +185,20 @@ td {
   padding: 5px;
 }
 
+.formView{
+  width: 400px;
+  padding-left: 5px;
+}
 
+.formView input{
+  width: 600px;
+  height: 25px;
+}
 
+#adminAddAssignment, #adminAddCourse,  Button{
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #115737;
+  padding: 5px;
+}
